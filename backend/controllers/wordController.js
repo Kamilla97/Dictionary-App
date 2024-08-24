@@ -1,3 +1,4 @@
+const { bucket } = require('../config/storage');
 const { Op, where } = require('sequelize');
 const jwt = require('jsonwebtoken');
 
@@ -236,6 +237,31 @@ exports.getWordById = async (req, res) => {
 
 // Initialize Google Cloud Storage
 
+async function uploadFileToGCS(base64File, originalName) {
+    const destination = `${Date.now()}-${originalName}`; // Unique filename
+    const blob = bucket.file(destination);
+    const blobStream = blob.createWriteStream({
+        resumable: false,
+        contentType: 'audio/mpeg',
+        metadata: {
+            cacheControl: 'public, max-age=31536000',
+        },
+    });
+
+    // Decode the base64 string to a buffer
+    const buffer = Buffer.from(base64File, 'base64');
+
+    return new Promise((resolve, reject) => {
+        blobStream.on('error', (err) => { reject(err); });
+
+        blobStream.on('finish', () => {
+            const publicUrl = `https://storage.googleapis.com/${bucket.name}/${destination}`;
+            resolve(publicUrl);
+        });
+
+        blobStream.end(buffer);
+    });
+}
 
 exports.likeWord = async (req, res) => {
     try {
@@ -361,7 +387,7 @@ exports.createWord = async (req, res) => {
         try {
             // Handle MP3 file upload if provided
             if (mp3Base64) {
-                console.log("TODO: Implement file upload")
+                mp3Url = await uploadFileToGCS(mp3Base64, headword + ".mp3");
             }
             else {
                 console.log("No file provided")
