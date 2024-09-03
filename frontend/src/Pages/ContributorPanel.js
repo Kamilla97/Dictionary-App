@@ -17,8 +17,8 @@ function ContributorPanel() {
       </div>
 
       <Routes>
-        {/* <Route path="manage-words" element={<WordsList />} />
-        <Route path="add-word" element={<AddWord />} /> */}
+        <Route path="manage-words" element={<WordsList />} />
+        <Route path="add-word" element={<AddWord />} /> 
       </Routes>
     </div>
   );

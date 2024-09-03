@@ -35,9 +35,9 @@ function AdminPanel() {
         <Link to="users" className="text-blue-500 hover:underline ">Manage Users</Link>
       </nav>
       <Routes>
-        {/* <Route path="add-word" element={<AddWord />} />
+        <Route path="add-word" element={<AddWord />} />
         <Route path="words" element={<WordsList />} />
-        <Route path="users" element={<Users />} /> */}
+        <Route path="users" element={<Users />} /> 
       </Routes>
     </div>
   );
