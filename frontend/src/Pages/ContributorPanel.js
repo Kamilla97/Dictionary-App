@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
+import WordsList from './ManageWords/WordsList';
+import AddWord from './ManageWords/AddWord';
 
 function ContributorPanel() {
   return (
@@ -18,7 +20,7 @@ function ContributorPanel() {
 
       <Routes>
         <Route path="manage-words" element={<WordsList />} />
-        <Route path="add-word" element={<AddWord />} /> 
+        <Route path="add-word" element={<AddWord />} />
       </Routes>
     </div>
   );

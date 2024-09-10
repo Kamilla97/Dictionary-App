@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-
+import WordsList from './ManageWords/WordsList';
+import AddWord from './ManageWords/AddWord';
+import Users from './Users';
 import { refreshToken } from '../utils/refreshToken';
 
 function AdminPanel() {
@@ -37,7 +39,7 @@ function AdminPanel() {
       <Routes>
         <Route path="add-word" element={<AddWord />} />
         <Route path="words" element={<WordsList />} />
-        <Route path="users" element={<Users />} /> 
+        <Route path="users" element={<Users />} />
       </Routes>
     </div>
   );
