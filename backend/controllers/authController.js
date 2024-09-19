@@ -1,7 +1,6 @@
 const { User } = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { authenticateToken, authorizeRole } = require('../middleware/authMiddleware');
 
 // Generate an access token
 const generateAccessToken = (user) => {
