@@ -1,7 +1,7 @@
 // config.js
 const configs = {
     development: {
-        API_URL: "http://localhost:3006"
+        API_URL: "http://localhost:3000"
     },
     production: {
         API_URL: "https://api.example.com"
