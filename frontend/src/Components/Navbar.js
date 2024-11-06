@@ -4,6 +4,9 @@ import { AuthContext } from '../context/AuthContext';
 import Logo from '../logo.svg';
 import { FaMicrophone, FaStopCircle } from 'react-icons/fa';
 
+const config = require('./../config');
+const apiUrl = config.API_URL;
+
 const Navbar = ({ setSearchResults }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

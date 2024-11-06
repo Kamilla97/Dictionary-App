@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UserRow from '../Components/UserRow'; // UserRow will handle each user's row rendering
-
+const config = require('./../config');
+const apiUrl = config.API_URL;
 function UsersList() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Track current page

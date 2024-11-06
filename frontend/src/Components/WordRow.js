@@ -3,6 +3,8 @@ import { FaEye, FaPen, FaTrash } from 'react-icons/fa'; // Import icons from rea
 import ViewWordModal from './ViewWordModal';
 import EditWordModal from './EditWordModal';
 import DeleteWordModal from './DeleteWordModal';
+const config = require('./../config');
+const apiUrl = config.API_URL;
 
 function WordRow({ word, setWords }) {
   const [status, setStatus] = useState(word.status);

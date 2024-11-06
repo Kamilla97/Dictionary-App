@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Word from '../Components/Word';
-
+const config = require('./../config');
+const apiUrl = config.API_URL;
 const Words = () => {
     const [words, setWords] = useState([]); // Initialize words as an empty array
     const [error, setError] = useState(null); // Handle any errors

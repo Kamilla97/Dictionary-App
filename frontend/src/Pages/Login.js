@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';  // Import AuthContext
 import { jwtDecode } from 'jwt-decode';
+const config = require('./../config');
+const apiUrl = config.API_URL;
 
 function Login() {
   const [username, setUsername] = useState('');

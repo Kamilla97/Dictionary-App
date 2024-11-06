@@ -1,7 +1,8 @@
 // Pages/ManageWords/AddWord.js
 import React from 'react';
 import WordForm from '../../Components/WordForm';
-
+const config = require('./../../config');
+const apiUrl = config.API_URL;
 function AddWord() {
   const handleAddWord = async (wordData) => {
     try {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaVolumeUp, FaThumbsUp, FaThumbsDown, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+const config = require('./../config');
+const apiUrl = config.API_URL;
 
 const Word = ({ word, disableInteractions = false }) => {
     const [likes, setLikes] = useState(word.statistics.likes);

@@ -1,5 +1,7 @@
 import React from 'react';
 import WordForm from '../Components/WordForm';
+const config = require('./../config');
+const apiUrl = config.API_URL;
 
 function EditWordModal({ word, onClose, setWords }) {
   const handleSave = async (updatedWordData) => {

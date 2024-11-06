@@ -1,10 +1,11 @@
 // Pages/ManageWords/DeleteWordModal.js
 import React from 'react';
-
+const config = require('./../config');
+const apiUrl = config.API_URL;
 function DeleteWordModal({ wordId, onClose, setWords }) {
   const handleDelete = async () => {
     const token = localStorage.getItem('token');
-    await fetch(`http://localhost:3000/api/words/${wordId}`, {
+    await fetch(`${apiUrl}/api/words/${wordId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`

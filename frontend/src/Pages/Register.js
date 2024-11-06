@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+const config = require('./../config');
+const apiUrl = config.API_URL;
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

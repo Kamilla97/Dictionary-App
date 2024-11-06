@@ -1,4 +1,6 @@
 // utils/refreshToken.js
+const config = require('./../config');
+const apiUrl = config.API_URL;
 
 export const refreshToken = async () => {
     try {

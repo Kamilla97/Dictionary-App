@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WordRow from '../../Components/WordRow';
-
+const config = require('./../../config');
+const apiUrl = config.API_URL;
 function WordsList() {
   const [words, setWords] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Track current page

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { FaEye, FaPen, FaTrash } from 'react-icons/fa';
 
+
+const config = require('./../config');
+const apiUrl = config.API_URL;
+
 function UserRow({ user, setUsers }) {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
