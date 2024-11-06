@@ -14,7 +14,7 @@ function WordsList() {
     const fetchWords = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/api/wordsToManage?page=${currentPage}&limit=${limit}`, {
+        const response = await fetch(`${apiUrl}/api/wordsToManage?page=${currentPage}&limit=${limit}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },

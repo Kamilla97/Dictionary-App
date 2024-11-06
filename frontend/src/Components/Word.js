@@ -21,7 +21,7 @@ const Word = ({ word, disableInteractions = false }) => {
         if (disableInteractions) return;
 
         try {
-            const response = await fetch(`http://localhost:3000/api/likeWord/${word.id}`, {
+            const response = await fetch(`${apiUrl}/api/likeWord/${word.id}`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -53,7 +53,7 @@ const Word = ({ word, disableInteractions = false }) => {
         if (disableInteractions) return;
 
         try {
-            const response = await fetch(`http://localhost:3000/api/dislikeWord/${word.id}`, {
+            const response = await fetch(`${apiUrl}/api/dislikeWord/${word.id}`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -88,7 +88,7 @@ const Word = ({ word, disableInteractions = false }) => {
         if (!isExpanded) {
             // If meaning is expanded, send request to increment view count
             try {
-                await fetch(`http://localhost:3000/words/view/${word.id}`, {
+                await fetch(`${apiUrl}/words/view/${word.id}`, {
                     method: 'POST'
                 });
             } catch (error) {

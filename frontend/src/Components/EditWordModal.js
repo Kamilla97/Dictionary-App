@@ -6,7 +6,7 @@ const apiUrl = config.API_URL;
 function EditWordModal({ word, onClose, setWords }) {
   const handleSave = async (updatedWordData) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/words/${word.id}`, {
+      const response = await fetch(`${apiUrl}/api/words/${word.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

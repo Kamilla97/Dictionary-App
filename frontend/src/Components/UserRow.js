@@ -17,7 +17,7 @@ function UserRow({ user, setUsers }) {
 
   const handleDeleteUser = async () => {
     try {
-      await fetch(`http://localhost:3000/api/users/${user.id}`, {
+      await fetch(`${apiUrl}/api/users/${user.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

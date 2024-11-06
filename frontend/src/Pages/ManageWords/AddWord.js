@@ -6,7 +6,7 @@ const apiUrl = config.API_URL;
 function AddWord() {
   const handleAddWord = async (wordData) => {
     try {
-      const response = await fetch('http://localhost:3000/api/words', {
+      const response = await fetch(`${apiUrl}/api/words`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

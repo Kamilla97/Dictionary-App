@@ -5,7 +5,7 @@ const apiUrl = config.API_URL;
 export const refreshToken = async () => {
     try {
       const refreshToken = localStorage.getItem('refreshToken');
-      const response = await fetch('http://localhost:3000/api/refresh-token/', {
+      const response = await fetch(`${apiUrl}/api/refresh-token/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

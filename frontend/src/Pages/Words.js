@@ -9,7 +9,7 @@ const Words = () => {
     useEffect(() => {
         const fetchWords = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/words');
+                const response = await fetch(`${apiUrl}/api/words`);
                 const data = await response.json();
                 
                 // Check if the data contains an array

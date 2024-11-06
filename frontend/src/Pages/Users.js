@@ -14,7 +14,7 @@ function UsersList() {
     const fetchUsers = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/api/users?page=${currentPage}&limit=${limit}`, {
+        const response = await fetch(`${apiUrl}/api/users?page=${currentPage}&limit=${limit}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },

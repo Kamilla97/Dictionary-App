@@ -18,7 +18,7 @@ function WordRow({ word, setWords }) {
     setStatus(newStatus);
 
     // Send PUT request to update status
-    await fetch(`http://localhost:3000/api/words/${word.id}`, {
+    await fetch(`${apiUrl}/api/words/${word.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

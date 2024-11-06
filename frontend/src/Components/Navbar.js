@@ -33,7 +33,7 @@ const Navbar = ({ setSearchResults }) => {
   const handleSearch = async (query) => {
     if (query.trim() !== '') {
       try {
-        const response = await fetch(`http://localhost:3000/api/words/search?query=${query}`);
+        const response = await fetch(``${apiUrl}/api/words/search?query=${query}`);
         const data = await response.json();
         setSearchResults(data);
       } catch (error) {
